@@ -84,6 +84,10 @@ function __autoload($className) {
   }
 }
 
+setReporting();
+removeMagicQuotes(); # Not needed in newest verison of PHP
+unregisterGlobals();
+callHook();
 
 
 
