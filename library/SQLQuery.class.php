@@ -1,6 +1,6 @@
 <?php 
 class SQLQuery {
-  
+
   protected $_dbHandle;
   protected $_result;
 
@@ -27,13 +27,18 @@ class SQLQuery {
   }
 
   function selectAll() {
-    $query = "SELECT * from '" . $this->_table . "'";
+    $query =  $query = 'select * from `'.$this->_table.'`';
     return $this->query($query);
   }
 
   function select($id) {
      $query = 'select * from `'.$this->_table.'` where `id` = \''.mysql_real_escape_string($id).'\'';
      return $this->query($query, 1);
+  }
+
+  function delete($id) {
+    $query = 'delete from items where id = \''.mysql_real_escape_string($id).'\'';
+    return $this->query($query);
   }
 
   /* Custom SQL Query */

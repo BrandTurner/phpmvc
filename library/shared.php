@@ -37,7 +37,7 @@ function unregisterGlobals() {
     foreach ($array as $value) {
       foreach($GLOBALS[$value] as $key => $var) {
         if ($var === $GLOBALS[$key]) {
-          unset($GLOBALS[$key];
+          unset($GLOBALS[$key]);
         }
       }
     }
@@ -58,7 +58,7 @@ function callHook() {
   array_shift($urlArray);
   $queryString = $urlArray;
 
-  $controllerName - $controller;
+  $controllerName = $controller;
   $controller = ucwords($controller);
   $model = rtrim($controller, 's');
   $controller .= 'Controller';
